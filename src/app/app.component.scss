@@ -1,0 +1,15 @@
+.deal {
+  display: grid;
+  padding: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+
+  &__card {
+    display: flex;
+    justify-content: center;
+
+    &-img {
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="deal">
+  <button class="deal__draw" (click)="drawCards()">Deal!</button>
+  <button class="deal__draw-mock" (click)="drawMockCards()">Deal! (mock)</button>
+  <button class="deal__clear" (click)="clearCards()">Clear!</button>
+  @defer (on viewport) {
+    @for (card of deal(); track card.code) {
+      <div class="deal__card">
+        <img class="deal__card-img" src="{{card.code | deckImageSrc}}" loading="lazy"/>
+      </div>
+    }
+  } @placeholder {
+    <span> empty! </span>
+  } @loading (minimum 1s) {
+    <span> loading... </span>
+  }
+</div>
+<router-outlet />
